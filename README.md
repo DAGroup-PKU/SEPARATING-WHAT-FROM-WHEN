@@ -39,6 +39,8 @@ This repository is the official **training and inference** code. Checkpoints and
 **The video below is a compressed preview. Full-resolution clips with per-shot clocks are best viewed on the [Project Page](https://dagroup-pku.github.io/SEPARATING-WHAT-FROM-WHEN.github.io/).**
 
 
+https://github.com/user-attachments/assets/173d39e0-59a7-4491-bba9-86f154ed8917
+
 
 
 ## ⚙️ Usage
