@@ -13,7 +13,7 @@ Yichen Liu<sup>1</sup>, Quanwei Zhang<sup>2</sup>, Haozhe Wang<sup>3</sup>, Dong
 <p align="center">
   <a href="https://dagroup-pku.github.io/SEPARATING-WHAT-FROM-WHEN.github.io/"><img src="https://img.shields.io/badge/Project-Page-1f8acb" alt="Project Page"></a>
   <a href="https://huggingface.co/starry0929/Separating-What-From-When"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Weights-ffcc4d" alt="Weights"></a>
-  <a href="https://github.com/DAGroup-PKU/TCR"><img src="https://img.shields.io/badge/Code-TCR-24292e" alt="Code"></a>
+  <a href="https://github.com/DAGroup-PKU/SEPARATING-WHAT-FROM-WHEN"><img src="https://img.shields.io/badge/Code-GitHub-24292e" alt="Code"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-LTX--2-3fa34d" alt="License"></a>
 </p>
 
@@ -39,7 +39,7 @@ This repository is the official **training and inference** code. Checkpoints and
 
 **The video below is the project overview. Full-resolution clips with per-shot clocks are on the [Project Page](https://dagroup-pku.github.io/SEPARATING-WHAT-FROM-WHEN.github.io/).**
 
-https://github.com/DAGroup-PKU/TCR/releases/download/teaser/overview.mp4
+https://github.com/DAGroup-PKU/SEPARATING-WHAT-FROM-WHEN/releases/download/teaser/overview.mp4
 
 ## ⚙️ Usage
 
@@ -54,8 +54,8 @@ Every script takes `--checkpoint` / `--model-path`, `--text-encoder-path`, and `
 ### Install
 
 ```bash
-git clone https://github.com/DAGroup-PKU/TCR.git
-cd TCR
+git clone https://github.com/DAGroup-PKU/SEPARATING-WHAT-FROM-WHEN.git
+cd SEPARATING-WHAT-FROM-WHEN
 conda env create -f environment.yml
 conda activate tcr
 bash setup_env.sh
