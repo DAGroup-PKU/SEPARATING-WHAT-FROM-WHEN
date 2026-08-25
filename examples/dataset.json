@@ -1,0 +1,6 @@
+[
+  {
+    "caption": "{\"shots\": [{\"shot_id\": \"SHOT_1\", \"time_range\": [0.0, 2.0], \"visual_description\": \"A close-up of a ceramic bowl.\"}], \"events\": [], \"scene_description\": \"A short dining shot.\", \"global_style\": \"Natural lighting.\", \"global_audio\": \"Quiet room tone.\"}",
+    "media_path": "clips/example_001.mp4"
+  }
+]

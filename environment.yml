@@ -1,0 +1,14 @@
+# Conda environment for TCR (Separating What from When).
+# Python only — install PyTorch and the rest with setup_env.sh
+# (avoids conda's ITT / iJIT_NotifyEvent issues with the pytorch channel).
+#
+#   conda env create -f environment.yml
+#   conda activate tcr
+#   bash setup_env.sh
+#
+name: tcr
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip

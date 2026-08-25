@@ -1,0 +1,100 @@
+# =============================================================================
+# TCR AV LoRA — paper training recipe
+#
+# Temporal Context Routing on LTX-2.3 22B, rank=128, joint audio-video.
+# Paper defaults: temporal_mode=tcr, tcr_beta=5.0.
+#
+# Paths below are placeholders. Pass real ones on the CLI:
+#   bash scripts/train.sh --model-path ... --text-encoder-path ... \
+#     --dataset /path/to/dataset.json --output-dir ./outputs/tcr_av_lora
+# =============================================================================
+
+model:
+  model_path: "path/to/ltx-2.3-22b-dev.safetensors"
+  text_encoder_path: "path/to/gemma-3-12b-it"
+  training_mode: "lora"
+  load_checkpoint: null
+  temporal_mode: "tcr"
+  tcr_beta: 5.0
+
+lora:
+  rank: 128
+  alpha: 128
+  dropout: 0.0
+  target_modules:
+    - "to_k"
+    - "to_q"
+    - "to_v"
+    - "to_out.0"
+    - "ff.net.0.proj"
+    - "ff.net.2"
+    - "audio_ff.net.0.proj"
+    - "audio_ff.net.2"
+
+training_strategy:
+  name: "text_to_video"
+  first_frame_conditioning_p: 0.5
+  with_audio: true
+  audio_latents_dir: "audio_latents"
+  audio_loss_weight: 1.0
+
+optimization:
+  learning_rate: 1e-4
+  steps: 500000
+  batch_size: 1
+  gradient_accumulation_steps: 1
+  max_grad_norm: 1.0
+  optimizer_type: "adamw"
+  scheduler_type: "cosine"
+  scheduler_params:
+    warmup_steps: 500
+  enable_gradient_checkpointing: true
+
+acceleration:
+  mixed_precision_mode: "bf16"
+  quantization: null
+  load_text_encoder_in_8bit: false
+
+data:
+  preprocessed_data_root: "path/to/preprocessed"
+  num_dataloader_workers: 4
+
+validation:
+  prompts: []
+  negative_prompt: "worst quality, inconsistent motion, blurry, jittery, distorted"
+  images: null
+  video_dims: [704, 1280, 193]
+  frame_rate: 24.0
+  seed: 42
+  inference_steps: 30
+  interval: null
+  videos_per_prompt: 1
+  guidance_scale: 4.0
+  stg_scale: 1.0
+  stg_blocks: [29]
+  stg_mode: "stg_av"
+  generate_audio: true
+  skip_initial_validation: true
+
+checkpoints:
+  interval: 1000
+  keep_last_n: 10
+  precision: "bfloat16"
+
+flow_matching:
+  timestep_sampling_mode: "shifted_logit_normal"
+  timestep_sampling_params: { }
+
+hub:
+  push_to_hub: false
+  hub_model_id: null
+
+wandb:
+  enabled: false
+  project: "tcr-av-lora"
+  entity: null
+  tags: ["ltx2", "lora", "tcr", "av"]
+  log_validation_videos: true
+
+seed: 42
+output_dir: "./outputs/tcr_av_lora"

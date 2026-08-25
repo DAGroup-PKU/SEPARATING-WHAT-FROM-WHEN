@@ -1,0 +1,198 @@
+{
+  "shots": [
+    {
+      "shot_id": "SHOT_1",
+      "time_range": [
+        0.0,
+        2.2
+      ],
+      "references": [
+        {
+          "ref_id": "PERSON_1",
+          "type": "person",
+          "id_features": "A young woman with long black hair, wearing a white button-down shirt and white knee-high boots",
+          "attributes": "long black hair, white button-down shirt, white knee-high boots"
+        },
+        {
+          "ref_id": "PERSON_2",
+          "type": "person",
+          "id_features": "A young man with short black hair, wearing a white varsity jacket with black stripes, a white t-shirt, a silver necklace, and blue jeans",
+          "attributes": "short black hair, white varsity jacket, white t-shirt, silver necklace, blue jeans"
+        },
+        {
+          "ref_id": "SCENE_1",
+          "type": "scene",
+          "id_features": "The exterior of a house at night, featuring a lit open doorway, a pathway, and some plants",
+          "attributes": "nighttime, lit doorway, pathway, plants"
+        }
+      ],
+      "visual_description": "[PERSON_1] and [PERSON_2] are standing outside [SCENE_1]. [PERSON_1] turns away slightly.",
+      "camera": {
+        "shot_type": "full shot",
+        "angle": "eye level",
+        "movement": "static"
+      },
+      "active_events": [
+        "DIALOGUE_1"
+      ]
+    },
+    {
+      "shot_id": "SHOT_2",
+      "time_range": [
+        2.2,
+        3.8
+      ],
+      "references": [
+        "PERSON_1",
+        "PERSON_2"
+      ],
+      "visual_description": "A close-up of [PERSON_1] looking at [PERSON_2] and speaking.",
+      "camera": {
+        "shot_type": "close-up",
+        "angle": "eye level",
+        "movement": "static"
+      },
+      "active_events": [
+        "DIALOGUE_2"
+      ]
+    },
+    {
+      "shot_id": "SHOT_3",
+      "time_range": [
+        3.8,
+        5.2
+      ],
+      "references": [
+        "PERSON_2",
+        "PERSON_1"
+      ],
+      "visual_description": "A close-up of [PERSON_2] looking at [PERSON_1] and speaking.",
+      "camera": {
+        "shot_type": "close-up",
+        "angle": "eye level",
+        "movement": "static"
+      },
+      "active_events": [
+        "DIALOGUE_3"
+      ]
+    },
+    {
+      "shot_id": "SHOT_4",
+      "time_range": [
+        5.2,
+        6.8
+      ],
+      "references": [
+        "PERSON_1",
+        "PERSON_2"
+      ],
+      "visual_description": "A close-up of [PERSON_1] smiling and nodding as [PERSON_2] continues to speak off-screen.",
+      "camera": {
+        "shot_type": "close-up",
+        "angle": "eye level",
+        "movement": "static"
+      },
+      "active_events": [
+        "DIALOGUE_4"
+      ]
+    },
+    {
+      "shot_id": "SHOT_5",
+      "time_range": [
+        6.8,
+        8.5
+      ],
+      "references": [
+        {
+          "ref_id": "PERSON_3",
+          "type": "person",
+          "id_features": "A young man with short black hair, wearing a grey crewneck sweater and a silver necklace, holding a white garment",
+          "attributes": "short black hair, grey sweater, silver necklace, holding a white garment"
+        },
+        "SCENE_1"
+      ],
+      "visual_description": "Viewed from inside the house, [PERSON_3] appears in the doorway, looking surprised.",
+      "camera": {
+        "shot_type": "medium shot",
+        "angle": "eye level",
+        "movement": "static"
+      },
+      "active_events": []
+    },
+    {
+      "shot_id": "SHOT_6",
+      "time_range": [
+        8.5,
+        10.0
+      ],
+      "references": [
+        "PERSON_1",
+        "PERSON_2"
+      ],
+      "visual_description": "A close-up of [PERSON_2] turning his head with a surprised expression. [PERSON_1] is partially visible in the foreground.",
+      "camera": {
+        "shot_type": "close-up",
+        "angle": "eye level",
+        "movement": "static"
+      },
+      "active_events": []
+    }
+  ],
+  "events": [
+    {
+      "event_id": "DIALOGUE_1",
+      "type": "dialogue",
+      "time_range": [
+        1.5,
+        2.8
+      ],
+      "content": {
+        "speaker": "PERSON_1",
+        "line": "没有",
+        "description": "Denial"
+      }
+    },
+    {
+      "event_id": "DIALOGUE_2",
+      "type": "dialogue",
+      "time_range": [
+        2.8,
+        4.4
+      ],
+      "content": {
+        "speaker": "PERSON_1",
+        "line": "我们先回去吧",
+        "description": "Suggesting to leave"
+      }
+    },
+    {
+      "event_id": "DIALOGUE_3",
+      "type": "dialogue",
+      "time_range": [
+        4.4,
+        5.6
+      ],
+      "content": {
+        "speaker": "PERSON_2",
+        "line": "那先上车吧",
+        "description": "Agreeing and suggesting an action"
+      }
+    },
+    {
+      "event_id": "DIALOGUE_4",
+      "type": "dialogue",
+      "time_range": [
+        5.6,
+        5.9
+      ],
+      "content": {
+        "speaker": "PERSON_2",
+        "line": "你别着凉",
+        "description": "Expressing care"
+      }
+    }
+  ],
+  "scene_description": "A man and a woman are talking outside a house at night, deciding to leave. Suddenly, another man appears in the doorway, surprising them.",
+  "global_style": "Dramatic, nighttime lighting with a focus on character expressions.",
+  "global_audio": "Quiet outdoor ambience with clear dialogue."
+}
