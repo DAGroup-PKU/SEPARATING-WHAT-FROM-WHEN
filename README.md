@@ -4,32 +4,30 @@
 
 ### Fine-Grained Temporal Control for Joint Audio-Video Generation
 
-**Yichen Liu**<sup>1</sup> · **Quanwei Zhang**<sup>2</sup> · **Haozhe Wang**<sup>3</sup> · **Donghao Zhou**<sup>4</sup> · **Yang Shi**<sup>2</sup> · **Jiaming Liu**<sup>2</sup> · **Ruihua Huang**<sup>2</sup> · **Yingtian Zou**<sup>5</sup> · **Daquan Zhou**<sup>1</sup>
+Yichen Liu<sup>1</sup>, Quanwei Zhang<sup>2</sup>, Haozhe Wang<sup>3</sup>, Donghao Zhou<sup>4</sup>, Yang Shi<sup>2</sup>, Jiaming Liu<sup>2</sup>, Ruihua Huang<sup>2</sup>, Yingtian Zou<sup>5</sup>, Daquan Zhou<sup>1</sup>
 
-<sup>1</sup>Peking University &nbsp;·&nbsp; <sup>2</sup>Qwen Business Unit of Alibaba &nbsp;·&nbsp; <sup>3</sup>HKUST &nbsp;·&nbsp; <sup>4</sup>CUHK &nbsp;·&nbsp; <sup>5</sup>Shanghai Jiao Tong University
+> Peking University · Qwen Business Unit of Alibaba · HKUST · CUHK · Shanghai Jiao Tong University
+>
+> <sup>1</sup>Peking University&nbsp;&nbsp;<sup>2</sup>Qwen Business Unit of Alibaba&nbsp;&nbsp;<sup>3</sup>HKUST&nbsp;&nbsp;<sup>4</sup>CUHK&nbsp;&nbsp;<sup>5</sup>Shanghai Jiao Tong University
 
-[![Project Page](https://img.shields.io/badge/Project-Page-4d86c4?style=for-the-badge)](https://dagroup-pku.github.io/SEPARATING-WHAT-FROM-WHEN.github.io/)
-[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97-Weights-ffbd2e?style=for-the-badge)](https://huggingface.co/starry0929/Separating-What-From-When)
-[![GitHub](https://img.shields.io/badge/Code-TCR-24292f?style=for-the-badge&logo=github)](https://github.com/DAGroup-PKU/TCR)
+<p align="center">
+  <a href="https://dagroup-pku.github.io/SEPARATING-WHAT-FROM-WHEN.github.io/"><img src="https://img.shields.io/badge/Project-Page-1f8acb" alt="Project Page"></a>
+  <a href="https://huggingface.co/starry0929/Separating-What-From-When"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Weights-ffcc4d" alt="Weights"></a>
+  <a href="https://github.com/DAGroup-PKU/TCR"><img src="https://img.shields.io/badge/Code-TCR-24292e" alt="Code"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-LTX--2-3fa34d" alt="License"></a>
+</p>
 
 </div>
 
-<p align="center">
-  <a href="https://dagroup-pku.github.io/SEPARATING-WHAT-FROM-WHEN.github.io/">
-    <img src="https://dagroup-pku.github.io/SEPARATING-WHAT-FROM-WHEN.github.io/assets/posters/tcr_promo_film_poster.jpg" alt="Separating What from When" width="88%">
-  </a>
-</p>
+**Temporal Context Routing (TCR)** is a **training-time, plug-in** pathway that separates *what* a shot or a line describes from *when* it should influence generation. Intervals bypass the text encoder and arrive as a timing term on the text-attention logits, so the video stream and the audio stream read **one shared clock**. On the same LTX-2.3 22B recipe used in the paper, mean shot-boundary error falls from **1.11 s → 0.042 s** — about one frame at 24 fps.
 
-**Temporal Context Routing (TCR)** is a training-time, plug-in pathway that separates *what* a shot or a line describes from *when* it should influence generation. Intervals bypass the text encoder and arrive as a timing term on the text-attention logits, so the video stream and the audio stream read one shared clock. On the same LTX-2.3 22B recipe used in the paper, mean shot-boundary error falls from **1.11 s** to **0.042 s** — about one frame at 24 fps.
+This repository is the official **training and inference** code. Checkpoints and the 200 held-out test prompts live on [Hugging Face](https://huggingface.co/starry0929/Separating-What-From-When).
 
-This repository is the official **training and inference** code. Checkpoints and the 200 held-out test prompts live on [Hugging Face](https://huggingface.co/starry0929/Separating-What-From-When). Playable demos and the overview film are on the [project page](https://dagroup-pku.github.io/SEPARATING-WHAT-FROM-WHEN.github.io/).
+## 🔥 News
+- `[2026.08.25]` 🎉 Release of **inference & training code**, LoRA weights, and 200 held-out test prompts.
+- `[2026.08.21]` 🔥 Project page with generated examples: [dagroup-pku.github.io/SEPARATING-WHAT-FROM-WHEN.github.io](https://dagroup-pku.github.io/SEPARATING-WHAT-FROM-WHEN.github.io/).
 
-## News
-
-- `[2026.08.25]` Release of inference & training code, LoRA weights, and 200 held-out test prompts.
-- `[2026.08.21]` Project page with generated examples: [dagroup-pku.github.io/SEPARATING-WHAT-FROM-WHEN.github.io](https://dagroup-pku.github.io/SEPARATING-WHAT-FROM-WHEN.github.io/).
-
-## Todo
+## 📑 Todo List
 
 - [x] Inference code
 - [x] Training code (`configs/tcr_av_lora.yaml`, the paper recipe)
@@ -37,18 +35,23 @@ This repository is the official **training and inference** code. Checkpoints and
 - [x] 200 held-out test prompts on Hugging Face
 - [ ] Paper / arXiv
 
-## Requirements
+## 🎥 Demo
+
+**The video below is the project overview. Full-resolution clips with per-shot clocks are on the [Project Page](https://dagroup-pku.github.io/SEPARATING-WHAT-FROM-WHEN.github.io/).**
+
+https://github.com/DAGroup-PKU/TCR/releases/download/teaser/overview.mp4
+
+## ⚙️ Usage
+
+### Requirements
 
 - Linux + CUDA (PyTorch CUDA 12.4+ wheels via pip)
 - One 80 GB GPU for 22B + Gemma
-- Local copies of:
-  - **LTX-2.3 22B** checkpoint (`.safetensors`)
-  - **Gemma 3 12B** text-encoder directory
-  - **TCR LoRA** — [`separating-what-from-when.safetensors`](https://huggingface.co/starry0929/Separating-What-From-When/blob/main/separating-what-from-when.safetensors)
+- Local copies of **LTX-2.3 22B** (`.safetensors`), **Gemma 3 12B**, and the TCR LoRA
 
 Every script takes `--checkpoint` / `--model-path`, `--text-encoder-path`, and `--lora-path` / `--dataset` / `--data-root` explicitly.
 
-## Install
+### Install
 
 ```bash
 git clone https://github.com/DAGroup-PKU/TCR.git
@@ -62,8 +65,6 @@ bash setup_env.sh
 
 `setup_env.sh` creates `tcr` if missing, installs torch via pip, then `pip install -e` the three workspace packages (`ltx-core`, `ltx-pipelines`, `ltx-trainer`).
 
-Download the released LoRA (and, if you want the evaluation set, the 200 test prompts):
-
 ```bash
 huggingface-cli download starry0929/Separating-What-From-When \
   separating-what-from-when.safetensors \
@@ -74,9 +75,9 @@ huggingface-cli download starry0929/Separating-What-From-When \
   --local-dir ./examples
 ```
 
-## Inference
+### Inference
 
-`scripts/infer.sh` only takes model paths. The built-in prompt is `examples/clip_32845.json` (10 s, 241 frames @ 24 fps, 704×1280) — the opening demo on the project page.
+`scripts/infer.sh` only takes model paths. The built-in prompt is `examples/clip_32845.json` (10 s, 241 frames @ 24 fps, 704×1280).
 
 ```bash
 bash scripts/infer.sh \
@@ -86,9 +87,9 @@ bash scripts/infer.sh \
   --output outputs/tcr_infer.mp4
 ```
 
-The 200 held-out scripts used in the paper are `test_prompts_200.json` on Hugging Face. Point `--prompt-file` at any one of them, or at your own MTSS JSON with `time_range` on every shot and line.
+The 200 held-out scripts are `test_prompts_200.json` on Hugging Face. Point `--prompt-file` at any one of them, or at your own MTSS JSON with `time_range` on every shot and line.
 
-## Training
+### Training
 
 Dataset JSON (see `examples/dataset.json`):
 
@@ -118,13 +119,13 @@ bash scripts/train.sh \
 
 `configs/tcr_av_lora.yaml` matches the paper: LoRA rank 128, `temporal_mode: tcr`, `tcr_beta: 5.0`, 704×1280, 24 fps, joint audio–video.
 
-## Acknowledgement
+## 🙏 Acknowledgement
 
 Our work builds on [LTX-2](https://github.com/Lightricks/LTX-2) and [Gemma](https://huggingface.co/google/gemma-3-12b-it). Demos, the overview film, and per-clip clocks are hosted on the [project page](https://dagroup-pku.github.io/SEPARATING-WHAT-FROM-WHEN.github.io/).
 
-## Citation
+## ✏️ Citation
 
-If you find this work useful, please consider citing:
+If you find this work useful, please consider giving a ⭐ and citing:
 
 ```bibtex
 @inproceedings{liu2027separating,
