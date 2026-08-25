@@ -6,15 +6,14 @@
 
 Yichen Liu<sup>1</sup>, Quanwei Zhang<sup>2</sup>, Haozhe Wang<sup>3</sup>, Donghao Zhou<sup>4</sup>, Yang Shi<sup>2</sup>, Jiaming Liu<sup>2</sup>, Ruihua Huang<sup>2</sup>, Yingtian Zou<sup>5</sup>, Daquan Zhou<sup>1</sup>
 
-> Peking University · Qwen Business Unit of Alibaba · HKUST · CUHK · Shanghai Jiao Tong University
->
 > <sup>1</sup>Peking University&nbsp;&nbsp;<sup>2</sup>Qwen Business Unit of Alibaba&nbsp;&nbsp;<sup>3</sup>HKUST&nbsp;&nbsp;<sup>4</sup>CUHK&nbsp;&nbsp;<sup>5</sup>Shanghai Jiao Tong University
 
 <p align="center">
-  <a href="https://dagroup-pku.github.io/SEPARATING-WHAT-FROM-WHEN.github.io/"><img src="https://img.shields.io/badge/Project-Page-1f8acb" alt="Project Page"></a>
-  <a href="https://huggingface.co/starry0929/Separating-What-From-When"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Weights-ffcc4d" alt="Weights"></a>
-  <a href="https://github.com/DAGroup-PKU/SEPARATING-WHAT-FROM-WHEN"><img src="https://img.shields.io/badge/Code-GitHub-24292e" alt="Code"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-LTX--2-3fa34d" alt="License"></a>
+  <a href="https://dagroup-pku.github.io/SEPARATING-WHAT-FROM-WHEN.github.io/"><img src="https://img.shields.io/badge/Project-Page-1f8acb"></a>
+  <a href="https://arxiv.org"><img src="https://img.shields.io/badge/arXiv-Paper-b31b1b"></a>
+  <a href="https://huggingface.co/papers"><img src="https://img.shields.io/badge/Hugging%20Face-Daily%20Paper-ffcc4d"></a>
+  <a href="https://huggingface.co/starry0929/Separating-What-From-When"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Weights-ffcc4d"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-LTX--2-3fa34d"></a>
 </p>
 
 </div>
@@ -37,9 +36,9 @@ This repository is the official **training and inference** code. Checkpoints and
 
 ## 🎥 Demo
 
-**The video below is the project overview. Full-resolution clips with per-shot clocks are on the [Project Page](https://dagroup-pku.github.io/SEPARATING-WHAT-FROM-WHEN.github.io/).**
 
 https://github.com/DAGroup-PKU/SEPARATING-WHAT-FROM-WHEN/releases/download/teaser/overview.mp4
+
 
 ## ⚙️ Usage
 
@@ -87,7 +86,7 @@ bash scripts/infer.sh \
   --output outputs/tcr_infer.mp4
 ```
 
-The 200 held-out scripts are `test_prompts_200.json` on Hugging Face. Point `--prompt-file` at any one of them, or at your own MTSS JSON with `time_range` on every shot and line.
+The 200 held-out scripts are `test_prompts_200.json` on Hugging Face. Point `--prompt-file` at any one of them, or at your own script JSON with `time_range` on every shot and line.
 
 ### Training
 
@@ -95,7 +94,7 @@ Dataset JSON (see `examples/dataset.json`):
 
 ```json
 [
-  {"caption": "{... MTSS JSON with time_range ...}", "media_path": "clips/001.mp4"}
+  {"caption": "{... script JSON with time_range ...}", "media_path": "clips/001.mp4"}
 ]
 ```
 

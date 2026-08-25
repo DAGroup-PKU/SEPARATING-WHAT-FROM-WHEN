@@ -1,6 +1,6 @@
 """Annotate text tokens with (t_start, t_end) intervals (seconds) for TCR.
 
-Given an MTSS JSON caption and a Hugging Face fast tokenizer, produce a
+Given a script JSON caption and a Hugging Face fast tokenizer, produce a
 per-token (t_s, t_e) tensor that Temporal Context Routing consumes. The same
 packed intervals are also what the rotary (RoTE) baseline reads.
 
@@ -84,10 +84,10 @@ def annotate_time_ranges(
     seq_len: int,
     clip_duration: float | None = None,
 ) -> torch.Tensor:
-    """Build per-token (t_s, t_e) seconds annotations for an MTSS caption.
+    """Build per-token (t_s, t_e) seconds annotations for a script caption.
 
     Args:
-        caption_json: MTSS caption JSON string.
+        caption_json: script JSON string.
         tokenizer: HF fast tokenizer (or LTXVGemmaTokenizer wrapper).
         seq_len: Padded token sequence length.
         clip_duration: Total clip duration in seconds; inferred from JSON if None.
@@ -107,7 +107,7 @@ def annotate_time_ranges(
     try:
         data = json.loads(caption_json)
         if not isinstance(data, dict):
-            raise ValueError("MTSS JSON must be an object at the top level")
+            raise ValueError("script JSON must be an object at the top level")
     except (json.JSONDecodeError, TypeError, ValueError):
         return torch.full((seq_len, 2), NO_ROPE_SENTINEL, dtype=torch.float32)
 
@@ -231,7 +231,7 @@ def annotate_and_pack_for_rote(
 
 
 def strip_time_ranges(prompt_json: str) -> tuple[str, dict[str, list[tuple[float, float] | None]]]:
-    """Strip ``time_range`` fields from MTSS JSON prompt, return stripped string + timing_map.
+    """Strip ``time_range`` fields from script JSON prompt, return stripped string + timing_map.
 
     Why: ``"time_range": [0.0, 2.0]`` chars are tokenized into ~8 Gemma tokens per
     shot/event/subtitle and convey no signal the model can actually use (LLMs are
@@ -240,7 +240,7 @@ def strip_time_ranges(prompt_json: str) -> tuple[str, dict[str, list[tuple[float
     values in a side-channel ``timing_map`` for the annotator.
 
     Args:
-        prompt_json: Original MTSS JSON string (with ``time_range`` fields).
+        prompt_json: Original script JSON string (with ``time_range`` fields).
 
     Returns:
         (stripped_json, timing_map) where:
@@ -344,7 +344,7 @@ def annotate_time_ranges_v2(
     try:
         data = json.loads(stripped_json)
         if not isinstance(data, dict):
-            raise ValueError("MTSS JSON must be an object at the top level")
+            raise ValueError("script JSON must be an object at the top level")
     except (json.JSONDecodeError, TypeError, ValueError):
         return torch.full((seq_len, 2), NO_ROPE_SENTINEL, dtype=torch.float32)
 
@@ -483,7 +483,7 @@ def _find_shot_containing_ts(
 ) -> list[float] | None:
     """Pick the shot whose interval contains ``ts``.
 
-    Adjacent shots in MTSS share boundaries (e.g., SHOT_4 ends at 7, SHOT_5
+    Adjacent shots in a script share boundaries (e.g., SHOT_4 ends at 7, SHOT_5
     starts at 7). At a shared boundary, ``ts`` semantically belongs to the
     shot starting there, not the one ending there. Resolution rule:
 

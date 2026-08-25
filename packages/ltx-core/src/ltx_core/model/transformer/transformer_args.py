@@ -250,7 +250,7 @@ class TransformerArgsPreprocessor:
           - Audio Q: ``patchifier._compute_audio_timings`` returns seconds
             via ``hop_length / sample_rate``.
           - K (text): ``context_positions`` comes from ``time_range_annotator``
-            (MTSS JSON ``time_range`` fields, in seconds).
+            (script JSON ``time_range`` fields, in seconds).
         """
         positions = modality.positions
         # positions shape: (B, n_axes, T, 2) when use_middle_indices_grid, else (B, n_axes, T)

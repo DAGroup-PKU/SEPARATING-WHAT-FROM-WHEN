@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""把训练 JSON 里的 MTSS caption 从顶层 references[] 转成 per-shot references[]。
+"""把训练 JSON 里的 script caption 从顶层 references[] 转成 per-shot references[]。
 
 转换规则 (写法 1):
   - 顶层 references[] → 拆到每个 shot 内的 references[]
@@ -12,7 +12,7 @@
 幂等: 已经是新 schema 的 caption (顶层无 references[],shot 内有 references[])
 跳过不再转。
 
-输入: 训练 JSON,JSON 数组,每个 item 形如 {"caption": "<MTSS JSON 字符串>",
+输入: 训练 JSON,JSON 数组,每个 item 形如 {"caption": "<script JSON 字符串>",
 "media_path": "..."}。
 
 用法:
@@ -52,7 +52,7 @@ _INLINE_TIME_MARKER = re.compile(r"\s*\[\d+(?:\.\d+)?s\]\s*")
 
 
 def strip_inline_time_markers_in_dict(mtss: dict) -> bool:
-    """对一个 MTSS caption dict in-place 删 visual_description 里的 [X.Xs] 标记。
+    """对一个 script caption dict in-place 删 visual_description 里的 [X.Xs] 标记。
 
     返回是否真的发生了改动 (用于幂等检测)。
     """
@@ -73,7 +73,7 @@ def strip_inline_time_markers_in_dict(mtss: dict) -> bool:
 
 
 def localize_references(mtss: dict) -> dict:
-    """把一个 MTSS caption dict 转成 per-shot references schema。
+    """把一个 script caption dict 转成 per-shot references schema。
 
     返回新 dict,不修改输入。
 

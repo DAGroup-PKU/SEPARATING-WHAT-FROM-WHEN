@@ -189,13 +189,13 @@ def main() -> None:  # noqa: PLR0912, PLR0915
         "--prompt",
         type=str,
         default=None,
-        help="Text / MTSS-JSON prompt for generation. Mutually exclusive with --prompt-file.",
+        help="Text / script JSON prompt for generation. Mutually exclusive with --prompt-file.",
     )
     parser.add_argument(
         "--prompt-file",
         type=str,
         default=None,
-        help="Path to a UTF-8 prompt file (plain text or MTSS JSON). "
+        help="Path to a UTF-8 prompt file (plain text or script JSON). "
         "Mutually exclusive with --prompt.",
     )
     parser.add_argument(
