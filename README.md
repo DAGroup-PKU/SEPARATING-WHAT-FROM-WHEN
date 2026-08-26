@@ -4,7 +4,7 @@
 
 ### Fine-Grained Temporal Control for Joint Audio-Video Generation
 
-Yichen Liu<sup>1</sup>, Quanwei Zhang<sup>2</sup>, Haozhe Wang<sup>3</sup>, Donghao Zhou<sup>4</sup>, Yang Shi<sup>2</sup>, Jiaming Liu<sup>2</sup>, Ruihua Huang<sup>2</sup>, Yingtian Zou<sup>5</sup>, Daquan Zhou<sup>1</sup>
+Yichen Liu<sup>1</sup>, Quanwei Zhang<sup>2</sup>, Haozhe Wang<sup>3</sup>, Donghao Zhou<sup>4</sup>, Xiaojie Li, Yang Shi<sup>2</sup>, Jiaming Liu<sup>2</sup>, Ruihua Huang<sup>2</sup>, Yingtian Zou<sup>5</sup>, Daquan Zhou<sup>1</sup>
 
 > <sup>1</sup>Peking University&nbsp;&nbsp;<sup>2</sup>Qwen Business Unit of Alibaba&nbsp;&nbsp;<sup>3</sup>HKUST&nbsp;&nbsp;<sup>4</sup>CUHK&nbsp;&nbsp;<sup>5</sup>Shanghai Jiao Tong University
 
@@ -134,7 +134,7 @@ If you find this work useful, please consider giving a ⭐ and citing:
   title     = {Separating What from When: Fine-Grained Temporal Control
                for Joint Audio-Video Generation},
   author    = {Liu, Yichen and Zhang, Quanwei and Wang, Haozhe and
-               Zhou, Donghao and Shi, Yang and Liu, Jiaming and
+               Zhou, Donghao and Li, Xiaojie and Shi, Yang and Liu, Jiaming and
                Huang, Ruihua and Zou, Yingtian and Zhou, Daquan},
   booktitle = {Under review},
   year      = {2027}
