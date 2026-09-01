@@ -1,12 +1,18 @@
 <div align="center">
 
-# The Missing Temporal Link: Temporal Context Routing
+<h1>The Missing Temporal Link:<br>Temporal Context Routing</h1>
 
-### for Script-Driven Audio-Video Generation
+<p><strong>for Script-Driven Audio-Video Generation</strong></p>
 
-Yichen Liu<sup>1</sup>, Quanwei Zhang<sup>2</sup>, Haozhe Wang<sup>3</sup>, Donghao Zhou<sup>4</sup>, Xiaojie Li, Yang Shi<sup>2</sup>, Jiaming Liu<sup>2</sup>, Ruihua Huang<sup>2</sup>, Yingtian Zou<sup>5</sup>, Daquan Zhou<sup>1</sup>
+<p>
+  Yichen Liu<sup>1</sup>, Quanwei Zhang<sup>2</sup>, Haozhe Wang<sup>3</sup>, Donghao Zhou<sup>4</sup>, Xiaojie Li<br>
+  Yang Shi<sup>2</sup>, Jiaming Liu<sup>2</sup>, Ruihua Huang<sup>2</sup>, Yingtian Zou<sup>5</sup>, Daquan Zhou<sup>1</sup>
+</p>
 
-> <sup>1</sup>Peking University&nbsp;&nbsp;<sup>2</sup>Qwen Business Unit of Alibaba&nbsp;&nbsp;<sup>3</sup>HKUST&nbsp;&nbsp;<sup>4</sup>CUHK&nbsp;&nbsp;<sup>5</sup>Shanghai Jiao Tong University
+<p>
+  <sup>1</sup>&nbsp;Peking University&nbsp;&nbsp;&middot;&nbsp;&nbsp;<sup>2</sup>&nbsp;Qwen Business Unit of Alibaba<br>
+  <sup>3</sup>&nbsp;HKUST&nbsp;&nbsp;&middot;&nbsp;&nbsp;<sup>4</sup>&nbsp;CUHK&nbsp;&nbsp;&middot;&nbsp;&nbsp;<sup>5</sup>&nbsp;Shanghai Jiao Tong University
+</p>
 
 <p align="center">
   <a href="https://dagroup-pku.github.io/Temporal-Context-Routing.github.io/"><img src="https://img.shields.io/badge/Project-Page-1f8acb"></a>
@@ -18,7 +24,7 @@ Yichen Liu<sup>1</sup>, Quanwei Zhang<sup>2</sup>, Haozhe Wang<sup>3</sup>, Dong
 
 </div>
 
-**Temporal Context Routing (TCR)** is a **training-time, plug-in** pathway that separates *what* a shot or a line describes from *when* it should influence generation. Intervals bypass the text encoder and arrive as a timing term on the text-attention logits, so the video stream and the audio stream read **one shared clock**. On the same LTX-2.3 22B recipe used in the paper, mean shot-boundary error falls from **1.11 s → 0.042 s** — about one frame at 24 fps.
+**Temporal Context Routing (TCR)** aligns script-specified shot and dialogue timing with the shared video-audio timeline. Timing bypasses the text encoder and enters cross-attention logits as a routing score, separating *what* to generate from *when* it should appear. Built on LTX-2.3 22B, TCR reduces shot-boundary error from **1.11 s to 0.042 s**—about one frame at 24 fps—and raises dialogue timing accuracy from **28.3% to 84.1%**.
 
 This repository is the official **training and inference** code. Checkpoints and the 200 held-out test prompts live on [Hugging Face](https://huggingface.co/starry0929/Separating-What-From-When).
 
