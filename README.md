@@ -1,8 +1,8 @@
 <div align="center">
 
-# The Missing Timeline: Temporal Context Routing
+# The Missing Temporal Link: Temporal Context Routing
 
-### for Script-Aligned Joint Audio-Video Generation
+### for Script-Driven Audio-Video Generation
 
 Yichen Liu<sup>1</sup>, Quanwei Zhang<sup>2</sup>, Haozhe Wang<sup>3</sup>, Donghao Zhou<sup>4</sup>, Xiaojie Li, Yang Shi<sup>2</sup>, Jiaming Liu<sup>2</sup>, Ruihua Huang<sup>2</sup>, Yingtian Zou<sup>5</sup>, Daquan Zhou<sup>1</sup>
 
@@ -130,9 +130,9 @@ Our work builds on [LTX-2](https://github.com/Lightricks/LTX-2) and [Gemma](http
 If you find this work useful, please consider giving a ⭐ and citing:
 
 ```bibtex
-@inproceedings{liu2027missingtimeline,
-  title     = {The Missing Timeline: Temporal Context Routing
-               for Script-Aligned Joint Audio-Video Generation},
+@inproceedings{liu2027missingtemporallink,
+  title     = {The Missing Temporal Link: Temporal Context Routing
+               for Script-Driven Audio-Video Generation},
   author    = {Liu, Yichen and Zhang, Quanwei and Wang, Haozhe and
                Zhou, Donghao and Li, Xiaojie and Shi, Yang and Liu, Jiaming and
                Huang, Ruihua and Zou, Yingtian and Zhou, Daquan},
