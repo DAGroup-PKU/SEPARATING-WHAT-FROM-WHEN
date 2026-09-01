@@ -1,4 +1,4 @@
-# Conda environment for TCR (Separating What from When).
+# Conda environment for Temporal Context Routing (TCR).
 # Python only — install PyTorch and the rest with setup_env.sh
 # (avoids conda's ITT / iJIT_NotifyEvent issues with the pytorch channel).
 #

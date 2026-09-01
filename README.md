@@ -1,15 +1,15 @@
 <div align="center">
 
-# Separating What from When
+# The Missing Timeline: Temporal Context Routing
 
-### Fine-Grained Temporal Control for Joint Audio-Video Generation
+### for Script-Aligned Joint Audio-Video Generation
 
 Yichen Liu<sup>1</sup>, Quanwei Zhang<sup>2</sup>, Haozhe Wang<sup>3</sup>, Donghao Zhou<sup>4</sup>, Xiaojie Li, Yang Shi<sup>2</sup>, Jiaming Liu<sup>2</sup>, Ruihua Huang<sup>2</sup>, Yingtian Zou<sup>5</sup>, Daquan Zhou<sup>1</sup>
 
 > <sup>1</sup>Peking University&nbsp;&nbsp;<sup>2</sup>Qwen Business Unit of Alibaba&nbsp;&nbsp;<sup>3</sup>HKUST&nbsp;&nbsp;<sup>4</sup>CUHK&nbsp;&nbsp;<sup>5</sup>Shanghai Jiao Tong University
 
 <p align="center">
-  <a href="https://dagroup-pku.github.io/SEPARATING-WHAT-FROM-WHEN.github.io/"><img src="https://img.shields.io/badge/Project-Page-1f8acb"></a>
+  <a href="https://dagroup-pku.github.io/Temporal-Context-Routing.github.io/"><img src="https://img.shields.io/badge/Project-Page-1f8acb"></a>
   <a href="https://arxiv.org"><img src="https://img.shields.io/badge/arXiv-Paper-b31b1b"></a>
   <a href="https://huggingface.co/papers"><img src="https://img.shields.io/badge/Hugging%20Face-Daily%20Paper-ffcc4d"></a>
   <a href="https://huggingface.co/starry0929/Separating-What-From-When"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Weights-ffcc4d"></a>
@@ -24,7 +24,7 @@ This repository is the official **training and inference** code. Checkpoints and
 
 ## 🔥 News
 - `[2026.08.25]` 🎉 Release of **inference & training code**, LoRA weights, and 200 held-out test prompts.
-- `[2026.08.21]` 🔥 Project page with generated examples: [dagroup-pku.github.io/SEPARATING-WHAT-FROM-WHEN.github.io](https://dagroup-pku.github.io/SEPARATING-WHAT-FROM-WHEN.github.io/).
+- `[2026.08.21]` 🔥 Project page with generated examples: [dagroup-pku.github.io/Temporal-Context-Routing.github.io](https://dagroup-pku.github.io/Temporal-Context-Routing.github.io/).
 
 ## 📑 Todo List
 
@@ -36,10 +36,10 @@ This repository is the official **training and inference** code. Checkpoints and
 
 ## 🎥 Demo
 
-**The video below is a compressed preview. Full-resolution clips with per-shot clocks are best viewed on the [Project Page](https://dagroup-pku.github.io/SEPARATING-WHAT-FROM-WHEN.github.io/).**
+**The video below is a compressed preview. Full-resolution clips with per-shot clocks are best viewed on the [Project Page](https://dagroup-pku.github.io/Temporal-Context-Routing.github.io/).**
 
 
-https://github.com/user-attachments/assets/173d39e0-59a7-4491-bba9-86f154ed8917
+[![Watch the project overview](assets/demo_poster.jpg)](https://dagroup-pku.github.io/Temporal-Context-Routing.github.io/assets/videos/tcr_promo_film.mp4)
 
 
 
@@ -56,8 +56,8 @@ Every script takes `--checkpoint` / `--model-path`, `--text-encoder-path`, and `
 ### Install
 
 ```bash
-git clone https://github.com/DAGroup-PKU/SEPARATING-WHAT-FROM-WHEN.git
-cd SEPARATING-WHAT-FROM-WHEN
+git clone https://github.com/DAGroup-PKU/Temporal-Context-Routing.git
+cd Temporal-Context-Routing
 conda env create -f environment.yml
 conda activate tcr
 bash setup_env.sh
@@ -123,16 +123,16 @@ bash scripts/train.sh \
 
 ## 🙏 Acknowledgement
 
-Our work builds on [LTX-2](https://github.com/Lightricks/LTX-2) and [Gemma](https://huggingface.co/google/gemma-3-12b-it). Demos, the overview film, and per-clip clocks are hosted on the [project page](https://dagroup-pku.github.io/SEPARATING-WHAT-FROM-WHEN.github.io/).
+Our work builds on [LTX-2](https://github.com/Lightricks/LTX-2) and [Gemma](https://huggingface.co/google/gemma-3-12b-it). Demos, the overview film, and per-clip clocks are hosted on the [project page](https://dagroup-pku.github.io/Temporal-Context-Routing.github.io/).
 
 ## ✏️ Citation
 
 If you find this work useful, please consider giving a ⭐ and citing:
 
 ```bibtex
-@inproceedings{liu2027separating,
-  title     = {Separating What from When: Fine-Grained Temporal Control
-               for Joint Audio-Video Generation},
+@inproceedings{liu2027missingtimeline,
+  title     = {The Missing Timeline: Temporal Context Routing
+               for Script-Aligned Joint Audio-Video Generation},
   author    = {Liu, Yichen and Zhang, Quanwei and Wang, Haozhe and
                Zhou, Donghao and Li, Xiaojie and Shi, Yang and Liu, Jiaming and
                Huang, Ruihua and Zou, Yingtian and Zhou, Daquan},
