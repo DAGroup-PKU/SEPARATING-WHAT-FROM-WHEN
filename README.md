@@ -10,7 +10,7 @@
 </p>
 
 <p>
-  <sup>1</sup>&nbsp;Peking University&nbsp;&nbsp;&middot;&nbsp;&nbsp;<sup>2</sup>&nbsp;Qwen Business Unit of Alibaba<br>
+  <sup>1</sup>&nbsp;Peking University&nbsp;&nbsp;&middot;&nbsp;&nbsp;<sup>2</sup>&nbsp;Qwen Applications<br>
   <sup>3</sup>&nbsp;HKUST&nbsp;&nbsp;&middot;&nbsp;&nbsp;<sup>4</sup>&nbsp;CUHK&nbsp;&nbsp;&middot;&nbsp;&nbsp;<sup>5</sup>&nbsp;Shanghai Jiao Tong University
 </p>
 
