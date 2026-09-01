@@ -1,8 +1,6 @@
 <div align="center">
 
-<h1>The Missing Temporal Link:<br>Temporal Context Routing</h1>
-
-<p><strong>for Script-Driven Audio-Video Generation</strong></p>
+<h2>The Missing Temporal Link:<br>Temporal Context Routing for Script-Driven Audio-Video Generation</h2>
 
 <p>
   Yichen Liu<sup>1</sup>, Quanwei Zhang<sup>2</sup>, Haozhe Wang<sup>3</sup>, Donghao Zhou<sup>4</sup>, Xiaojie Li<br>
