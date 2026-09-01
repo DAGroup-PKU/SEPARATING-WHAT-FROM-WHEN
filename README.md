@@ -16,7 +16,7 @@
   <a href="https://dagroup-pku.github.io/Temporal-Context-Routing.github.io/"><img src="https://img.shields.io/badge/Project-Page-1f8acb"></a>
   <a href="https://arxiv.org"><img src="https://img.shields.io/badge/arXiv-Paper-b31b1b"></a>
   <a href="https://huggingface.co/papers"><img src="https://img.shields.io/badge/Hugging%20Face-Daily%20Paper-ffcc4d"></a>
-  <a href="https://huggingface.co/starry0929/Separating-What-From-When"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Weights-ffcc4d"></a>
+  <a href="https://huggingface.co/starry0929/Temporal-Context-Routing"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Weights-ffcc4d"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-LTX--2-3fa34d"></a>
 </p>
 
@@ -24,7 +24,7 @@
 
 **Temporal Context Routing (TCR)** aligns script-specified shot and dialogue timing with the shared video-audio timeline. Timing bypasses the text encoder and enters cross-attention logits as a routing score, separating *what* to generate from *when* it should appear. Built on LTX-2.3 22B, TCR reduces shot-boundary error from **1.11 s to 0.042 s**—about one frame at 24 fps—and raises dialogue timing accuracy from **28.3% to 84.1%**.
 
-This repository is the official **training and inference** code. Checkpoints and the 200 held-out test prompts live on [Hugging Face](https://huggingface.co/starry0929/Separating-What-From-When).
+This repository is the official **training and inference** code. Checkpoints and the 200 held-out test prompts live on [Hugging Face](https://huggingface.co/starry0929/Temporal-Context-Routing).
 
 ## 🔥 News
 - `[2026.08.25]` 🎉 Release of **inference & training code**, LoRA weights, and 200 held-out test prompts.
@@ -72,11 +72,11 @@ bash setup_env.sh
 `setup_env.sh` creates `tcr` if missing, installs torch via pip, then `pip install -e` the three workspace packages (`ltx-core`, `ltx-pipelines`, `ltx-trainer`).
 
 ```bash
-huggingface-cli download starry0929/Separating-What-From-When \
-  separating-what-from-when.safetensors \
+huggingface-cli download starry0929/Temporal-Context-Routing \
+  temporal-context-routing.safetensors \
   --local-dir ./weights
 
-huggingface-cli download starry0929/Separating-What-From-When \
+huggingface-cli download starry0929/Temporal-Context-Routing \
   test_prompts_200.json \
   --local-dir ./examples
 ```
@@ -89,7 +89,7 @@ huggingface-cli download starry0929/Separating-What-From-When \
 bash scripts/infer.sh \
   --checkpoint /path/to/ltx-2.3-22b-dev.safetensors \
   --text-encoder-path /path/to/gemma-3-12b-it \
-  --lora-path ./weights/separating-what-from-when.safetensors \
+  --lora-path ./weights/temporal-context-routing.safetensors \
   --output outputs/tcr_infer.mp4
 ```
 

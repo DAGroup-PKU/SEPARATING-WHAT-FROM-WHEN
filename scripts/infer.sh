@@ -5,7 +5,7 @@ set -euo pipefail
 #   bash scripts/infer.sh \
 #     --checkpoint /path/to/ltx-2.3-22b-dev.safetensors \
 #     --text-encoder-path /path/to/gemma-3-12b-it \
-#     --lora-path /path/to/separating-what-from-when.safetensors \
+#     --lora-path /path/to/temporal-context-routing.safetensors \
 #     [--output outputs/tcr_infer.mp4]
 
 source "$(cd "$(dirname "$0")" && pwd)/_env.sh"
