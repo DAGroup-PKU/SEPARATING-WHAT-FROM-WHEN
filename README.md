@@ -14,8 +14,8 @@
 
 <p align="center">
   <a href="https://dagroup-pku.github.io/Temporal-Context-Routing.github.io/"><img src="https://img.shields.io/badge/Project-Page-1f8acb"></a>
-  <a href="https://arxiv.org"><img src="https://img.shields.io/badge/arXiv-Paper-b31b1b"></a>
-  <a href="https://huggingface.co/papers"><img src="https://img.shields.io/badge/Hugging%20Face-Daily%20Paper-ffcc4d"></a>
+  <a href="https://arxiv.org/abs/2609.02367"><img src="https://img.shields.io/badge/arXiv-2609.02367-b31b1b"></a>
+  <a href="https://huggingface.co/papers/2609.02367"><img src="https://img.shields.io/badge/Hugging%20Face-Daily%20Paper-ffcc4d"></a>
   <a href="https://huggingface.co/starry0929/Temporal-Context-Routing"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Weights-ffcc4d"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-LTX--2-3fa34d"></a>
 </p>
@@ -27,6 +27,7 @@
 This repository is the official **training and inference** code. Checkpoints and the 200 held-out test prompts live on [Hugging Face](https://huggingface.co/starry0929/Temporal-Context-Routing).
 
 ## 🔥 News
+- `[2026.09.03]` 📄 Paper available on [arXiv](https://arxiv.org/abs/2609.02367) and [Hugging Face Papers](https://huggingface.co/papers/2609.02367).
 - `[2026.08.25]` 🎉 Release of **inference & training code**, LoRA weights, and 200 held-out test prompts.
 - `[2026.08.21]` 🔥 Project page with generated examples: [dagroup-pku.github.io/Temporal-Context-Routing.github.io](https://dagroup-pku.github.io/Temporal-Context-Routing.github.io/).
 
@@ -36,7 +37,7 @@ This repository is the official **training and inference** code. Checkpoints and
 - [x] Training code (`configs/tcr_av_lora.yaml`, the paper recipe)
 - [x] LoRA weights on Hugging Face
 - [x] 200 held-out test prompts on Hugging Face
-- [ ] Paper / arXiv
+- [x] Paper / arXiv
 
 ## 🎥 Demo
 
